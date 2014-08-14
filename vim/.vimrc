@@ -134,9 +134,8 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-execute pathogen#infect()
-call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
-let g:snippets_dir = "~/.vim/bundle/vim-snippets/snippets/"
+set t_Co=256
+colorscheme desert
