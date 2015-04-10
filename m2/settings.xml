@@ -1,77 +1,61 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
-	<mirrors>
-		<mirror>
-<!-- 			This sends everything else to /public  -->
-			<id>nexus</id>
-			<mirrorOf>*</mirrorOf>
-			<url>http://192.168.201.125:9090/nexus/content/groups/public</url>
-		</mirror>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+    http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <mirrors>
+        <mirror>
+            <id>nexus</id>
+            <mirrorOf>*</mirrorOf>
+            <url>http://192.168.201.125:9090/nexus/content/groups/public</url>
+        </mirror>
     </mirrors>
-	<profiles>
-		<profile>
-			<id>nexus</id>
-			<!--Enable snapshots for the built in central repo to direct -->
-			<!--all requests to nexus via the mirror -->
-			<repositories>
-				<repository>
-					<id>central</id>
-					<url>http://central</url>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-					<snapshots>
-						<enabled>true</enabled>
-						<updatePolicy>always</updatePolicy>
-					</snapshots>
-				</repository>
-			</repositories>
-			<pluginRepositories>
-				<pluginRepository>
-					<id>central</id>
-					<url>http://central</url>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-				</pluginRepository>
-			</pluginRepositories>
-		</profile>
+    <profiles>
         <profile>
-            <id>local-dev</id>
-            <properties>
-                <database.url>jdbc:postgresql://localhost/auth</database.url>
-                <database.user>cube</database.user>
-                <database.password>123456</database.password>
-                <database.schema>public</database.schema>
-                <database.driver>org.postgresql.Driver</database.driver>
-                <database.dependency.groupid>postgresql</database.dependency.groupid>
-                <database.dependency.artifactid>postgresql</database.dependency.artifactid>
-                <database.dependency.version>9.1-901.jdbc4</database.dependency.version>
-            </properties>
-        </profile>
-        <profile>
-            <id>sidious-dev</id>
-            <properties>
-                <database.url>jdbc:jtds:sqlserver://sidious:5000/auth;instance=c38709</database.url>
-                <database.user>sa</database.user>
-                <database.password>123456789*</database.password>
-                <database.schema>dbo</database.schema>
-                <database.driver></database.driver>
-                <database.driver.groupId>net.sourceforge.jtds</database.driver.groupId>
-                <database.driver.artifactId>jtds</database.driver.artifactId>
-                <database.driver.version>1.3.0</database.driver.version>
-            </properties>
+            <id>nexus</id>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>http://central</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>central</id>
+                    <url>http://central</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
         </profile>
     </profiles>
-	<activeProfiles>
-		<!--make the profile active all the time -->
-		<activeProfile>nexus</activeProfile>
-		<activeProfile>sidious-dev</activeProfile>
-	</activeProfiles>
+
+    <activeProfiles>
+        <activeProfile>nexus</activeProfile>
+    </activeProfiles>
+
+    <servers>
+        <server>
+            <id>call-release</id>
+            <username>jenkins</username>
+            <password>deployer</password>
+        </server>
+
+        <server>
+            <id>call-snapshot</id>
+            <username>jenkins</username>
+            <password>deployer</password>
+        </server>
+    </servers>
 
 </settings>
