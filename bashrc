@@ -101,9 +101,18 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
+# Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# if [[ `pstree -As | grep xinit | wc -l` == 1 ]]; then
+#     if [ -f ~/.screenlayout/screen.sh ]; then
+#         . ~/.screenlayout/screen.sh
+#     fi
+#     if [ -f ~/.wallpapers.sh ]; then
+#         . ~/.wallpapers.sh &
+#     fi
+# fi

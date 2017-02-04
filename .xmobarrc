@@ -1,8 +1,7 @@
 Config { 
 
    -- appearance
-   -- font =         "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
-     font = "xft:Monospace:pixelsize=13"
+     font = "xft:Fantasque Sans Mono:style=Regular:size=12"
    , bgColor =      "black"
    , fgColor =      "#646464"
    , position =     Top

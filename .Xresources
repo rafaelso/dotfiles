@@ -1,87 +1,40 @@
-URxvt.colorIT:      #87af5f
-URxvt.colorBD:      #d7d7d7
-URxvt.colorUL:      #87afd7
-Xcursor.theme:    Vanilla-DMZ-AA
+! fonts xft
+URxvt*font: xft:Fantasque Sans Mono:style=Regular:size=12
+URxvt*boldFont: xft:Fantasque Sans Mono:style=Bold:size=12
 
-!urxvt color scheme:
-URxvt*background: #2B2B2B
-URxvt*foreground: #DEDEDE
+/* Couleurs Tango */
+URxvt.foreground: #C8C8C8
+URxvt.background: #323232
+URxvt.color0:     #2E3436
+URxvt.color1:     #CC0000
+URxvt.color2:     #4E9A06
+URxvt.color3:     #C4A000
+URxvt.color4:     #3465A4
+URxvt.color5:     #75507B
+URxvt.color6:     #06989A
+URxvt.color7:     #D3D7CF
+URxvt.color8:     #555753
+URxvt.color9:     #EF2929
+URxvt.color10:    #8AE234
+URxvt.color11:    #FCE94F
+URxvt.color12:    #729FCF
+URxvt.color13:    #AD7FA8
+URxvt.color14:    #34E2E2
+URxvt.color15:    #EEEEEC
 
-URxvt*colorUL: #86a2b0
+URxvt.transparent: true
+URxvt.shading:     10
+!URxvt.fading:      40
 
-! black
-URxvt*color0  : #2E3436
-URxvt*color8  : #555753
-! red
-URxvt*color1  : #CC0000
-URxvt*color9  : #EF2929
-! green
-URxvt*color2  : #4E9A06
-URxvt*color10 : #8AE234
-! yellow
-URxvt*color3  : #C4A000
-URxvt*color11 : #FCE94F
-! blue
-URxvt*color4  : #3465A4
-URxvt*color12 : #729FCF
-! magenta
-URxvt*color5  : #75507B
-URxvt*color13 : #AD7FA8
-! cyan
-URxvt*color6  : #06989A
-URxvt*color14 : #34E2E2
-! white
-URxvt*color7  : #D3D7CF
-URxvt*color15 : #EEEEEC
+URxvt.scrollBar:         false
+URxvt.scrollTtyOutput:   false
+URxvt.scrollWithBuffer:  true
+URxvt.scrollTtyKeypress: true
 
-!urxvt fonts: 
-URxvt*font: xft:Monospace:pixelsize=13
-!URxvt*font: xft:DejaVu Sans Mono:pixelsize=11
-!URxvt*boldFont: xft:Monospace:bold:pixelsize=12
-
-
-!urxvt extensions:
-!URxvt.perl-ext-common:  default,matcher,tabbedex
-!URxvt.perl-ext-common:default,tabbed,clipboard,keyboard-select
-URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select
-
-!enabling clickable links:
-URxvt.urlLauncher:      chromium
-URxvt.matcher.button:   1 
-
-!urxvt scrolling options and cursor style:
-URxvt*saveLines: 10000
-!URxvt*scrollstyle:plain
-URxvt*scrollstyle:rxvt
-URxvt*scrollBar: false
-URxvt*cursorBlink: true
-URxvt*cursorUnderline: true
-
-!! urxvt tabs settings:
-!URxvt.tabbed.tabbar-fg: 2
-!URxvt.tabbed.tabbar-bg: 0
-!URxvt.tabbed.tab-fg: 2
-!URxvt.tabbed.tab-bg: 8
-!URxvt.tabbed.autohide:  yes
-!URxvt.tabbed.new-button:  no
-!URxvt.tabbed.title: no
-
-!-*- Perl extensions -*-
-URxvt.keysym.M-u:     perl:url-select:select_next
-URxvt.url-launcher:   chromium
-URxvt.underlineURLs:  True
-URxvt.keysym.M-Escape:perl:keyboard-select:activate
-URxvt.keysym.M-c:     perl:clipboard:copy
-URxvt.keysym.M-v:     perl:clipboard:paste
-URxvt.keysym.M-C-v:   perl:clipboard:paste_escaped
-!URxvt.copyCommand:   xsel -ib
-!URxvt.pasteCommand:  xsel -ob
-
-URxvt*scrollTtyOutput:      false
-URxvt*scrollWithBuffer:     true
-URxvt*scrollTtyKeypress:    true
-
-!Xlock settings
-XLock.background: Black
-XLock.foreground: White
-XLock.font: -adobe-helvetica---normal--0-0-0-0-p-0-iso8859-1
+Xft.autohint: 0
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault

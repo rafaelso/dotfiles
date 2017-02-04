@@ -16,7 +16,7 @@ myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 myManageHook = composeAll
 	[ className =? "Skype" --> doShift "9"
-	, className =? "Chromium-browser" --> doShift "8"
+	, className =? "google-chrome" --> doShift "8"
 	, isFullscreen --> doFullFloat
 	]
 
@@ -29,6 +29,8 @@ myKeys = [ ((mod4Mask .|. shiftMask, xK_l), spawn "slock") ] ++
   ]
 
 main = do
+spawn "adjust-screens"
+spawn "start-rotating-wallpapers"
 xmproc <- spawnPipe "xmobar"
 xmproc2 <- spawnPipe "xmobar ~/.xmobarrc2"
 hPutStrLn xmproc2 ""
